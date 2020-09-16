@@ -10,6 +10,7 @@ let timeUp = false;
 let score = 0;
 let countdown;
 let timeLimit = 20000;
+// let timeLimit = 999000; <== this is the correct time for 999 seconds
 
 function pickRandomHole(holes){
     const randomHole = Math.floor(Math.random() * holes.length);
@@ -31,8 +32,9 @@ function popOut(){
     }, time);
 }
 //step 3 dynamically change text content to countdown//
-function startGame() {
-    countdown = timeLimit/20;
+function startGame(){
+    countdown = timeLimit/20
+    // countdown = timeLimit/1000; <== this is the correct equation for 999 seconds
     scoreBoard.textContent = 0;
     scoreBoard.style.display = 'block';
     countdownBoard.textContent = countdown;
